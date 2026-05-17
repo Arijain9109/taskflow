@@ -150,10 +150,6 @@ export default function ProjectDetail() {
   const columns = ['Todo', 'In Progress', 'Done'];
   const now = new Date();
 
-  
-    const map = { 'Todo': 'badge-todo', 'In Progress': 'badge-progress', 'Done': 'badge-done' };
-    return <span className={`badge ${map[status] || 'badge-todo'}`}>{status}</span>;
-  };
   const priorityBadge = (p) => {
     const map = { 'Low': 'badge-low', 'Medium': 'badge-medium', 'High': 'badge-high' };
     return <span className={`badge ${map[p]}`}>{p}</span>;
