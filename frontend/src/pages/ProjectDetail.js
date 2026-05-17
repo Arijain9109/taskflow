@@ -14,7 +14,6 @@ export default function ProjectDetail() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('tasks');
 
-  // Modals
   const [showTaskModal, setShowTaskModal] = useState(false);
   const [showMemberModal, setShowMemberModal] = useState(false);
   const [editTask, setEditTask] = useState(null);
@@ -181,7 +180,6 @@ export default function ProjectDetail() {
         </div>
       </div>
 
-      {/* Role badge */}
       <div style={{ display: 'flex', gap: 10, marginBottom: 20 }}>
         <span className={`badge ${myRole === 'Admin' ? 'badge-admin' : 'badge-member'}`}>
           Your role: {myRole}
@@ -194,7 +192,6 @@ export default function ProjectDetail() {
         )}
       </div>
 
-      {/* Tabs */}
       <div className="tabs">
         <button className={`tab ${activeTab === 'tasks' ? 'active' : ''}`} onClick={() => setActiveTab('tasks')}>
           Tasks ({tasks.length})
@@ -285,7 +282,6 @@ export default function ProjectDetail() {
         </div>
       )}
 
-      {/* Task Modal */}
       {showTaskModal && (
         <div className="modal-overlay" onClick={closeTaskModal}>
           <div className="modal" onClick={e => e.stopPropagation()}>
@@ -341,7 +337,6 @@ export default function ProjectDetail() {
         </div>
       )}
 
-      {/* Add Member Modal */}
       {showMemberModal && (
         <div className="modal-overlay" onClick={() => setShowMemberModal(false)}>
           <div className="modal" onClick={e => e.stopPropagation()}>
